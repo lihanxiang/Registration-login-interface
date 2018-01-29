@@ -1,0 +1,9 @@
+CREATE DATABASE user;
+USE user;
+CREATE TABLE user
+(	id			VARCHAR(50)	 	NOT NULL	PRIMARY KEY,
+	username	VARCHAR(20)		NOT NULL,
+    password	VARCHAR(20)		NOT NULL,
+    phone		VARCHAR(20)		NOT NULL,
+    email		VARCHAR(30)		NOT NULL
+);
