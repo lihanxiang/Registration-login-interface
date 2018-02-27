@@ -1,18 +1,11 @@
 package domain;
 
 public class User {
-    private String ID;
     private String username;
     private String password;
     private String phone;
     private String email;
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-    public String getID() {
-        return ID;
-    }
+    //private String verifyCode;
 
     public void setUsername(String username) {
         this.username = username;
@@ -41,4 +34,12 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    /*public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
+    }
+
+    public String getVerifyCode() {
+        return verifyCode;
+    }*/
 }
