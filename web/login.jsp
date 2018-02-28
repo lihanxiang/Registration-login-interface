@@ -13,25 +13,30 @@
 </head>
 <body>
 <h1 style="text-align: center ">欢迎来到登陆界面</h1>
-<form>
+<p align="center" style="color:red;font-weight: 800">${message}</p>
+<form action="<c:url value='/LoginServlet'/>" method="post">
     <table align="center" width="30%">
+        <input type="hidden" name="method" value="login">
         <tr>
-            <td width="10%">用户名</td>
-            <td width="20%">
-                <input type="text" name="username"/>
+            <td>
+                用户名:
+            </td>
+            <td>
+                <input type="text" name="username" value="${user.username}"/>${errors.username}<br/>
             </td>
         </tr>
         <tr>
-            <td width="10%">密码</td>
-            <td width="20%">
-                <input type="password" name="password"/>
+            <td>
+                密  码:
+            </td>
+            <td>
+                <input type="password" name="password" value="${user.password}"/>${errors.password}<br/>
             </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="submit" name="登陆">
-                <input type="reset" name="重置">
+                <input type="submit" value="登录"><br/>
             </td>
         </tr>
     </table>
