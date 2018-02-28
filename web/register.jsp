@@ -13,6 +13,7 @@
 </head>
 <body>
 <h1 style="text-align: center ">欢迎来到注册界面</h1>
+<p align="center" style="color:red;font-weight: 800">${_message}</p>
 <p align="center" style="color:red;font-weight: 800">${message}</p>
 <form action="<c:url value='/RegisterServlet'/>" method="post">
     <input type="hidden" name="method" value="register">
