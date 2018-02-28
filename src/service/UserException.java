@@ -1,10 +1,10 @@
 package service;
 
 public class UserException extends Exception {
-    public UserException(){
-        super();
-    }
-    public UserException(String message){
+
+    //自定义异常
+    public UserException(String message) {
         super(message);
     }
+
 }
