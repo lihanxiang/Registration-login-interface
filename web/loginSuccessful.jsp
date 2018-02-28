@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h2>登陆成功</h2>
+<h2 style="text-align: center">登陆成功</h2>
 </body>
 </html>
