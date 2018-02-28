@@ -1,28 +1,32 @@
 package service;
 
-
 import dao.UserDao;
 import domain.User;
 
 public class UserService {
+    //实例化
     private UserDao userDao = new UserDao();
 
-    public void regist(User user) throws UserException{
-        User user1 = userDao.findUser(user.getUsername());
-        if(user1 != null){
+    public void register(User user) throws UserException{
+        //实例化User类用以查找用户
+        User _user = userDao.findUser(user.getUsername());
+        if(_user != null){
             throw new UserException("该用户名已被注册");
         }
         userDao.add(user);
     }
 
+    //如果登陆成功，就以数据库中匹配的用户形式返回
     public User login(User user) throws UserException{
-        User user1 = userDao.findUser(user.getUsername());
-        if(user1 == null){
-            throw new UserException("该用户名不存在");
+        //实例化User类用以查找用户
+        User _user = userDao.findUser(user.getUsername());
+        if(_user == null){
+            throw new UserException("该用户不存在");
         }
-        if(!user1.getPassword().equals(user.getPassword())){
+        if(!_user.getPassword().equals(user.getPassword())){
             throw new UserException("密码错误");
         }
-        return user1;
+        //以已注册的用户形式返回
+        return _user;
     }
 }
