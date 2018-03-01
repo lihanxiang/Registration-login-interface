@@ -5,7 +5,7 @@ public class User {
     private String password;
     private String phone;
     private String email;
-    
+    private String verifyCode;
 
     public void setUsername(String username) {
         this.username = username;
@@ -35,5 +35,10 @@ public class User {
         return email;
     }
 
-
+    public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
+    }
+    public String getVerifyCode() {
+        return verifyCode;
+    }
 }
