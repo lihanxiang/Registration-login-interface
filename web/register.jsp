@@ -10,16 +10,9 @@
 <html>
 <head>
     <title>Title</title>
-    <script type="text/javascript">
-        function _change() {
-            var ele=document.getElementById("vCode");
-            ele.src="<c:url value='/VerifyCedeServlet'/>?xxx="+new Date().getTime();
-        }
-    </script>
 </head>
 <body>
 <h1 style="text-align: center ">欢迎来到注册界面</h1>
-<p align="center" style="color:red;font-weight: 800">${_message}</p>
 <p align="center" style="color:red;font-weight: 800">${message}</p>
 <form action="<c:url value='/RegisterServlet'/>" method="post">
     <input type="hidden" name="method" value="register">
@@ -58,14 +51,6 @@
             <td>
                 <input type="text" name="email"
                        value="${user.email}"/>${errors.email}
-            </td>
-        </tr>
-        <tr>
-            <td>验证码:</td>
-            <td>
-                <input type="text" name="verifyCode" value="${user.verifyCode}" size="10"/>${errors.verifyCode}
-                <img id="vCode" src="<c:url value='/VerifyCedeServlet'/> ">
-                <a href="javascript:_change()"> 点击更换 </a><br/>
             </td>
         </tr>
         <tr>
