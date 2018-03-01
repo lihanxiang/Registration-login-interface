@@ -57,6 +57,8 @@ public class RegisterServlet extends HttpServlet{
             errors.put("email", "邮箱不能为空");
         }
 
+
+
         //如果抛出异常，就提示用户
         if(errors.size() > 0){
             //设定属性
@@ -67,9 +69,10 @@ public class RegisterServlet extends HttpServlet{
              * 保留当前信息，将请求转发至register.jsp，
              * 进行重新注册
              */
-            request.getRequestDispatcher(request.getContextPath() +
-                    "/register.jsp");
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
         }
+
+
 
         try{
             //注册
