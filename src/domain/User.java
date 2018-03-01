@@ -5,6 +5,7 @@ public class User {
     private String password;
     private String phone;
     private String email;
+    
 
     public void setUsername(String username) {
         this.username = username;
@@ -33,4 +34,6 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+
 }
