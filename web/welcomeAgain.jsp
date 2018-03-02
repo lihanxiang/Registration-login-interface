@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h2 style="text-align: center">客观慢走，欢迎下次再来哦</h2>
+<h2 style="text-align: center">客官慢走，欢迎下次再来哦</h2>
 </body>
 </html>
