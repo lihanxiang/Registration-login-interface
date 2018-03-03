@@ -7,6 +7,7 @@ public class UserService {
     //实例化
     private UserDao userDao = new UserDao();
 
+    //如果注册成功，就将信息添加至数据库
     public void register(User user) throws UserException{
         //实例化User类用以查找用户
         User _user = userDao.findUser(user.getUsername());
@@ -20,10 +21,10 @@ public class UserService {
     public User login(User user) throws UserException{
         //实例化User类用以查找用户
         User _user = userDao.findUser(user.getUsername());
+
         if(_user == null){
             throw new UserException("该用户不存在");
-        }
-        if(!_user.getPassword().equals(user.getPassword())){
+        } else if(!_user.getPassword().equals(user.getPassword())){
             throw new UserException("密码错误");
         }
         //以已注册的用户形式返回
