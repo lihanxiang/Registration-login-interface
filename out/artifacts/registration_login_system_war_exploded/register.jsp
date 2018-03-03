@@ -28,10 +28,7 @@
             </td>
             <td>
                 <input type="text" name="username"
-                       value="${user.username}"/>
-            </td>
-            <td>
-                ${errors.username}
+                       value="${user.username}"/>${errors.username}
             </td>
         </tr>
         <tr>
