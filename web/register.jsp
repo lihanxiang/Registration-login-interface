@@ -6,10 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
+    <script type="text/javascript">
+        function RefreshCode(obj){
+            obj.src = obj.src + "?code=" + Math.random();
+        }
+    </script>
 </head>
 <body>
 <h1 style="text-align: center ">欢迎来到注册界面</h1>
@@ -23,7 +28,7 @@
             </td>
             <td>
                 <input type="text" name="username"
-                       value="${user.username}"/>${errors.username }
+                       value="${user.username}"/>${errors.username}
             </td>
         </tr>
         <tr>
@@ -51,6 +56,15 @@
             <td>
                 <input type="text" name="email"
                        value="${user.email}"/>${errors.email}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                验证码：
+            </td>
+            <td>
+                <input type="text" name="verifyCode" value="${user.verifyCode}" size="10"/>
+                <img id="verifyCode" src="RegisterVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/>${errors.verifyCode}
             </td>
         </tr>
         <tr>
