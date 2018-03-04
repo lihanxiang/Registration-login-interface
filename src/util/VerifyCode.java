@@ -8,77 +8,72 @@ import java.io.OutputStream;
 import java.util.Random;
 
 public class VerifyCode {
-    private int width = 50;
-    private int height = 35;
-    private Random random = new Random();
-    private String[] font = {"微软雅黑","宋体","黑体"};
-    private Color color = new Color(255,255,255);
-    private String code = "123456789zxcvbnmasdfghjklqwertyuiop";
-    private String text;
 
-    public BufferedImage getImage(){
-        BufferedImage image = createImage();
-        Graphics graphics = image.getGraphics();
-        StringBuilder stringBuilder = new StringBuilder();
+    private int width=60;//图片缓冲区的宽
+    private int height=15;//图片缓冲区的高
+    private Random r=new Random();//随机数字
+    private Color color=new Color(255,255,255);//白色背景
+    private String numbers="1234567890";//随机数字
+    private String text;//图片上的文本
 
-        for (int i = 0; i < 4; i++) {
-            String string = randomChar() + "";
-            stringBuilder.append(string);
-            graphics.setFont(randomFont());
-            graphics.setColor(randomColor());
-            graphics.drawString(string, i*width/5, height-5);
+    /*
+     * 创建图片缓冲区
+     */
+    public BufferedImage getImage()
+    {
+        BufferedImage image=createImage();//1.调用创建图片缓冲区方法
+        Graphics g=image.getGraphics();//3.得到绘制环境
+        StringBuilder sb=new StringBuilder();//用来装载生成的验证码文本
+        /*
+        循环四次
+        每次生成一个字符
+         */
+        for (int i=0;i<4;i++)
+        {
+            String str=randomChar()+"";//调用产生随机字符方法，随机生成一个字符
+            sb.append(str);//将生成的随机字符加到sb后面
+            g.setColor(randomColor());//调用产生随机颜色方法
+            g.drawString(str, i*width/5,height);//在图片中绘制文本
         }
-        this.text = stringBuilder.toString();
-        drawLine(image);
+
+        text=sb.toString();//把生成字符串赋给文本
         return image;
     }
 
-    public String getText(){
-        return this.text;
+    //放回验证码图片中的文本
+    public String getText()
+    {
+        return text;
     }
 
-    public static void output(BufferedImage image, OutputStream out) throws IOException{
-        ImageIO.write(image, "JPEG", out);
+    //保存至输出流，打印图片
+    public static void output(BufferedImage image, OutputStream out) throws IOException {
+        ImageIO.write(image,"JPEG",out);
     }
 
-    private BufferedImage createImage(){
-        BufferedImage image = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
-        Graphics graphics = image.getGraphics();
-        graphics.getColor();
-        graphics.setColor(color);
-        graphics.fillRect(0,0,width,height);
+    //创造图片缓冲区
+    private BufferedImage createImage()
+    {
+        BufferedImage image=new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
+        Graphics g=image.getGraphics();
+        g.setColor(color);
+        g.fillRect(0,0,width,height);
         return image;
     }
 
-    public char randomChar(){
-        int index = random.nextInt(code.length());
-        char c = code.charAt(index);
-        return c;
+    //生成随机字符
+    private char randomChar()
+    {
+        int index=r.nextInt(numbers.length());
+        return numbers.charAt(index);
     }
 
-    public Font randomFont(){
-        int index = random.nextInt(font.length);
-        int style = random.nextInt(4);
-        int size = random.nextInt(4) + 20;
-        return new Font(font[index],style,size);
-    }
-
-    public Color randomColor(){
-        int red = random.nextInt(150);
-        int green = random.nextInt(150);
-        int blue = random.nextInt(150);
-        return new Color(red, green, blue);
-    }
-
-    public void drawLine(BufferedImage image){
-        Graphics graphics = image.getGraphics();
-        for (int i = 0; i < 3; i++) {
-            int x1 = random.nextInt(width);
-            int y1 = random.nextInt(height);
-            int x2 = random.nextInt(width);
-            int y2 = random.nextInt(height);
-            graphics.setColor(Color.BLUE);
-            graphics.drawLine(x1, y1, x2, y2);
-        }
+    //生成随机颜色
+    private Color randomColor()
+    {
+        int red=r.nextInt(150);
+        int green=r.nextInt(150);
+        int blue=r.nextInt(150);
+        return new Color(red,green,blue);
     }
 }
