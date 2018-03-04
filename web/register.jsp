@@ -9,7 +9,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+<<<<<<< HEAD
 
+=======
+    <title>Title</title>
+    <script type="text/javascript">
+        function RefreshCode(obj){
+            obj.src = obj.src + "?code=" + Math.random();
+        }
+    </script>
+>>>>>>> 5047f60f84d27da739eeb45040cefd92289cbb65
 </head>
 <body>
 <h1 style="text-align: center ">欢迎来到注册界面</h1>
@@ -54,6 +63,15 @@
             </td>
         </tr>
 
+        <tr>
+            <td>
+                验证码：
+            </td>
+            <td>
+                <input type="text" name="verifyCode" value="${user.verifyCode}" size="10"/>
+                <img id="verifyCode" src="RegisterVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/>${errors.verifyCode}
+            </td>
+        </tr>
         <tr>
             <td></td>
             <td>
