@@ -28,4 +28,22 @@
 
 ### 功能实现
 
-有待更新
+#### 验证码
+
+##### 1. 注册验证码
+
+在注册时，需输入4位数字的验证码
+
+![](http://upload-images.jianshu.io/upload_images/3426615-8697d8878b047c3c.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](http://upload-images.jianshu.io/upload_images/3426615-fc3b738b856cd7f2.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](http://upload-images.jianshu.io/upload_images/3426615-d9a2dcf9d0a98530.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+##### 2. 登陆验证码
+
+![](http://upload-images.jianshu.io/upload_images/3426615-8e434b1db863911f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+##### 3. 刷新验证码
+
+点击图片可进行验证码刷新
