@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Title</title>
+
 </head>
 <body>
 <h1 style="text-align: center ">欢迎来到登陆界面</h1>
@@ -22,7 +23,7 @@
                 用户名:
             </td>
             <td>
-                <input type="text" name="username" value="${user.username}"/>${errors.username}<br/>
+                <input type="text" name="username" value="${user.username}"/>${errors.username}
             </td>
         </tr>
         <tr>
@@ -30,13 +31,15 @@
                 密  码:
             </td>
             <td>
-                <input type="password" name="password" value="${user.password}"/>${errors.password}<br/>
+                <input type="password" name="password" value="${user.password}"/>${errors.password}
             </td>
         </tr>
+
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="登录"><br/>
+                <input style="text-align: center" type="submit" value="登录">
+                <input style="text-align: center" type="reset" value="重置">
             </td>
         </tr>
     </table>
