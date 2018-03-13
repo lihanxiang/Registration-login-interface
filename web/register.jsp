@@ -9,77 +9,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<<<<<<< HEAD
-
-=======
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/register.css">
     <script type="text/javascript">
         function RefreshCode(obj){
             obj.src = obj.src + "?code=" + Math.random();
         }
     </script>
->>>>>>> 5047f60f84d27da739eeb45040cefd92289cbb65
 </head>
 <body>
-<h1 style="text-align: center ">欢迎来到注册界面</h1>
 <p align="center" style="color:red;font-weight: 800">${message}</p>
 <form action="<c:url value='/RegisterServlet'/>" method="post">
     <input type="hidden" name="method" value="register">
-    <table align="center" width="40%" >
-        <tr>
-            <td>
-                用户名:
-            </td>
-            <td>
-                <input type="text" name="username"
-                       value="${user.username}"/>${errors.username}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                密  码:
-            </td>
-            <td>
-                <input type="password" name="password"
-                       value="${user.password}"/>${errors.password}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                手机号码:
-            </td>
-            <td>
-                <input type="text" name="phone"
-                       value="${user.phone}"/>${errors.phone}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                邮箱:
-            </td>
-            <td>
-                <input type="text" name="email"
-                       value="${user.email}"/>${errors.email}
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                验证码：
-            </td>
-            <td>
-                <input type="text" name="verifyCode" value="${user.verifyCode}" size="10"/>
-                <img id="verifyCode" src="RegisterVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/>${errors.verifyCode}
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input style="text-align: center" type="submit" value="注册">
-                <input style="text-align: center" type="reset" value="重置">
-            </td>
-        </tr>
-    </table>
+    <div id="register">
+        <h1 style="text-align: center ">注册</h1>
+        ${errors.username}<input type="text" name="username" placeholder="用户名" value="${user.username}"/><br>
+        ${errors.password}<input type="password" name="password" placeholder="密  码" value="${user.password}"/><br>
+        ${errors.phone}<input type="text" name="phone" placeholder="手机号码" value="${user.phone}"/><br>
+        ${errors.email}<input type="text" name="email" placeholder="邮箱" value="${user.email}"/><br>
+        ${errors.verifyCode}<input type="text" name="verifyCode" placeholder="验证码" value="${user.verifyCode}" size="10"/><br>
+        <img id="verifyCode" src="RegisterVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/><br>
+        <input class="button" style="text-align: center" type="submit" value="注册">
+        <input class="button" style="text-align: center" type="reset" value="重置">
+    </div>
 </form>
 </body>
 </html>
