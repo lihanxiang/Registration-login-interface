@@ -13,7 +13,7 @@
     </servlet>
     <servlet>
         <servlet-name>RegisterVerifyCodeServlet</servlet-name>
-        <servlet-class>servlet.RigesterVerifyCodeServlet</servlet-class>
+        <servlet-class>servlet.RegisterVerifyCodeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginVerifyCodeServlet</servlet-name>
@@ -28,8 +28,7 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
-<<<<<<< HEAD
-=======
+
     <servlet-mapping>
         <servlet-name>RegisterVerifyCodeServlet</servlet-name>
         <url-pattern>/RegisterVerifyCodeServlet</url-pattern>
@@ -38,6 +37,4 @@
         <servlet-name>LoginVerifyCodeServlet</servlet-name>
         <url-pattern>/LoginVerifyCodeServlet</url-pattern>
     </servlet-mapping>
->>>>>>> 5047f60f84d27da739eeb45040cefd92289cbb65
-
 </web-app>
