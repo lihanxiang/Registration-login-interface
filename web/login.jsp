@@ -10,60 +10,30 @@
 <html>
 <head>
     <title>Title</title>
-<<<<<<< HEAD
-
-=======
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <script type="text/javascript">
         function RefreshCode(obj){
             obj.src = obj.src + "?code=" + Math.random();
         }
     </script>
->>>>>>> 5047f60f84d27da739eeb45040cefd92289cbb65
 </head>
 <body>
-<h1 style="text-align: center ">欢迎来到登陆界面</h1>
-<p align="center" style="color:red;font-weight: 800">${message}</p>
 <form action="<c:url value='/LoginServlet'/>" method="post">
-    <table align="center" width="30%">
-        <input type="hidden" name="method" value="login">
-        <tr>
-            <td>
-                用户名:
-            </td>
-            <td>
-                <input type="text" name="username" value="${user.username}"/>${errors.username}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                密  码:
-            </td>
-            <td>
-                <input type="password" name="password" value="${user.password}"/>${errors.password}
-<<<<<<< HEAD
-=======
-            </td>
-        </tr>
-        <tr>
-            <td>
-                验证码：
-            </td>
-            <td>
-                <input type="text" name="verifyCode" value="${user.verifyCode}" size="10"/>
-                <img id="verifyCode" src="LoginVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/>
-                ${errors.verifyCode}
->>>>>>> 5047f60f84d27da739eeb45040cefd92289cbb65
-            </td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>
-                <input style="text-align: center" type="submit" value="登录">
-                <input style="text-align: center" type="reset" value="重置">
-            </td>
-        </tr>
-    </table>
+    <input type="hidden" name="method" value="login">
+    <div id="login">
+        <h1 style="text-align: center ">登陆</h1>
+        <p align="center" style="color:red;font-weight: 800">${message}</p>
+        <input type="text" name="username" placeholder="用户名" value="${user.username}"/>${errors.username}<br>
+        <input type="password" name="password" placeholder="密  码" value="${user.password}"/>${errors.password}<br>
+        <input type="text" name="verifyCode" placeholder="验证码" value="${user.verifyCode}" size="10"/><br>
+        <img id="verifyCode" src="LoginVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/>
+                    ${errors.verifyCode}<br>
+        <input class="button" style="text-align: center" type="submit" value="登录">
+        <input class="button" style="text-align: center" type="reset" value="重置"><br>
+    </div>
+    <div id="turn_to_register">
+        <a class="button" href="register.jsp">注册</a>
+    </div>
 </form>
 </body>
 </html>
