@@ -11,9 +11,8 @@ public class VerifyCode {
 
     private int width=60;//图片缓冲区的宽
     private int height=15;//图片缓冲区的高
-    private Random r=new Random();//随机数字
+    private Random random=new Random();//随机数字
     private Color color=new Color(255,255,255);//白色背景
-    private String numbers="1234567890";//随机数字
     private String text;//图片上的文本
 
     /*
@@ -35,7 +34,7 @@ public class VerifyCode {
             g.setColor(randomColor());//调用产生随机颜色方法
             g.drawString(str, i*width/5,height);//在图片中绘制文本
         }
-
+        drawLine(g);
         text=sb.toString();//把生成字符串赋给文本
         return image;
     }
@@ -64,16 +63,25 @@ public class VerifyCode {
     //生成随机字符
     private char randomChar()
     {
-        int index=r.nextInt(numbers.length());
+        String numbers = "1234567890";
+        int index=random.nextInt(numbers.length());
         return numbers.charAt(index);
     }
 
     //生成随机颜色
     private Color randomColor()
     {
-        int red=r.nextInt(150);
-        int green=r.nextInt(150);
-        int blue=r.nextInt(150);
+        int red=random.nextInt(150);
+        int green=random.nextInt(150);
+        int blue=random.nextInt(150);
         return new Color(red,green,blue);
+    }
+
+    private void drawLine(Graphics g){
+        for (int i = 0; i < 2; i++) {
+            g.setColor(randomColor());
+            g.drawLine(random.nextInt(width), random.nextInt(height),
+                    random.nextInt(width), random.nextInt(height));
+        }
     }
 }
