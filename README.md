@@ -45,3 +45,17 @@
 ##### 3. 刷新验证码
 
 点击图片可进行验证码刷新
+
+***
+
+## Version 0.3
+
+### 更改用户界面
+
+![](https://upload-images.jianshu.io/upload_images/3426615-8082afd44fab9ca1.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://upload-images.jianshu.io/upload_images/3426615-68b13d1d82282dff.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+使用CSS来修改页面样式
+
+#### 这个项目就结束了
