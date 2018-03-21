@@ -28,12 +28,11 @@
         <input type="text" name="verifyCode" placeholder="验证码" value="${user.verifyCode}" size="10"/><br>
         <img id="verifyCode" src="LoginVerifyCodeServlet" title="点击更换" onclick="RefreshCode(this)"/>
                     ${errors.verifyCode}<br>
-        <input class="button" style="text-align: center" type="submit" value="登录">
-        <input class="button" style="text-align: center" type="reset" value="重置"><br>
-    </div>
-    <div id="turn_to_register">
-        <a class="button" href="register.jsp">注册</a>
-    </div>
+        <input class="button" type="submit" value="登录">
+        <input class="button" type="reset" value="重置">
+
+        <br><br><br>还没有账号？<a href="register.jsp">快速注册</a>
+
 </form>
 </body>
 </html>
