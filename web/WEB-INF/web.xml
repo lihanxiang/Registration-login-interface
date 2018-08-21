@@ -21,7 +21,7 @@
     </servlet>
 
     <servlet-mapping>
-    <servlet-name>RegisterServlet</servlet-name>
+        <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
